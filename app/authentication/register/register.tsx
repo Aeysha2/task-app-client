@@ -5,7 +5,7 @@ export const Register = ()=> {
       <form className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-semibold mb-6 text-center">Inscription</h2>
 
-        <Input />
+        <Input label="Prénom" type="text" /> 
         
 
         <div className="mb-4">

@@ -1,13 +1,14 @@
-export const Input = () => {
+import type {InputParams} from "../../types";
+export const Input = (params:InputParams) => {
     return (
 <div className="mb-4">
           <label htmlFor="firstname" className="block text-sm font-medium text-gray-700">
-            Prénom
+            {params.label}
           </label>
           <input
-            type="text"
-            id="firstname"
-            name="firstname"
+            type={params.type}
+            id={params.label}
+            name={params.label}
             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
             required
           />
