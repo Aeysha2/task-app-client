@@ -5,7 +5,6 @@ import { Register } from "../authentication/register/register";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Register" },
-    { name: "description", content: "Welcome to React Router!" },
   ];
 }
 

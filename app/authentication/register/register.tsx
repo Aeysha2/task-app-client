@@ -2,9 +2,13 @@ import { Input } from "../components/input";
 import { Button } from "../components/button";
 import { Form } from "../components/form";
 import { FormTitle } from "../components/formTitle";
+import { AuthInfo } from "../components/authInfo";
+import { useNavigate } from "react-router";
 export const Register = () => {
+  const navigate = useNavigate()
   const handlerRegister = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    navigate("/")
     console.log("handlerRegister");
   };
   return (
@@ -16,6 +20,9 @@ export const Register = () => {
       <Input label="Mot de passe" type="password" />
       <Input label="Confirmer le mot de passe" type="password" />
       <Button title="S'inscrire" onclick={handlerRegister} />
+      
+    <AuthInfo action="connectez-vous" answer="Vous avez deja un compte" url="/" />
+  
     </Form>
   );
 };
