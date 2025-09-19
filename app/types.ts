@@ -14,3 +14,10 @@ export type AuthInfoParams ={
   action : string;
   url : string;
 }
+
+export type TaskParams ={
+  id:string
+  title: string;
+  description : string;
+  status : string;
+}

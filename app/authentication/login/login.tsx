@@ -12,11 +12,10 @@ export const Login = () => {
     navigate("dashboard")
     console.log("handlerLogin")}
   return (
-    <Form>
+    <Form >
       <FormTitle title="Connexion" />
       <Input label="Email" type="email" />
       <Input label="Mot de passe" type="password" />
-      <span ></span>
       <Button title="Se connecter" onclick={handlerLogin} />
       
   <AuthInfo action="Inscrivez-vous" answer="Vous n’avez pas de compte" url="/register" />
