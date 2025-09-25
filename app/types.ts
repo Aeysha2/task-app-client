@@ -1,7 +1,7 @@
 export type InputParams = {
 label: string,
 type: string,
-
+  onChange: (value: string) => void;
 }
 
 export type ButtonParams = {
