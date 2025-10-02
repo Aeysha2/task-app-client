@@ -20,8 +20,7 @@ export const Register = () => {
       body:JSON.stringify({firstname,lastname,email,password})})
     .then(response=> response.json)
     .then(user =>{
-      console.log(user)
-      //navigate("/") 
+      navigate("/") 
       })
     .catch((error)=>{
       console.error("Erreur lors de l'ajout de l'utilisateur:", error) })
