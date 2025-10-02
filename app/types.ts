@@ -21,3 +21,10 @@ export type TaskParams ={
   description : string;
   status : string;
 }
+
+export type UserLogged ={
+ id:string
+ firstname:string
+ lastname:string
+ email:string
+}
