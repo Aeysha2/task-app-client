@@ -1,12 +1,24 @@
-import { useState } from "react";
 import type { TaskParams } from "~/types";
+import { baseUrl } from "~/utils/constante";
 
-export const  TaskItem = ({description,id,status,title}:TaskParams) =>  {
+export const  TaskItem = ({task} : {task:TaskParams}) =>  {
 
 
-  const handleStart = () => {
-    console.log("En cours")
-  };
+  const handleStart = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+       fetch(`${baseUrl}/tasks/starting/${task.id}`, {
+         method: "PATCH",
+         headers: { "Content-type": "application/json" },
+       })
+         .then((response) => response.json())   
+         .then(({task}) => {
+        console.log(task)
+        
+        })
+         .catch((error) => {
+           console.error("Échec de la connexion:", error);
+         });
+     };
 
   const handleDelete = () => {
     alert("Tâche supprimée !");
@@ -18,14 +30,14 @@ export const  TaskItem = ({description,id,status,title}:TaskParams) =>  {
 
   return (
     <div className="max-w-md bg-white shadow-md rounded-2xl p-4 border">
-      <h3 className="text-lg font-bold mb-1">📌 {title}</h3>
+      <h3 className="text-lg font-bold mb-1">📌 {task.title}</h3>
       <p className="text-gray-600 mb-2">
-        {description}
+        {task.description}
       </p>
       <p className="text-sm mb-3">
         <span className="font-semibold">Status :</span>{" "}
         <span>
-          {status}
+          {task.status}
         </span>
       </p>
 

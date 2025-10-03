@@ -18,7 +18,7 @@ export const DisplayTask = ({user}:{user?:UserLogged|null}) => {
       <div className="bg-white p-8 rounded shadow-md w-full">
         <h1 className="text-xl my-10 text-center uppercase">liste des taches </h1>
         <div className="flex flex-wrap justify-center gap-4">
-          {getTasks.map(({description,id,status,title}) => <TaskItem key={id} description={description} id={id} status={status} title={title} />)}
+          {getTasks.map((task) => <TaskItem key={task.id} task={task} />)}
         </div>
       </div>
     </div>
