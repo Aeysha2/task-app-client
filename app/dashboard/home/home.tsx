@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { AddTask } from "../components/addTask";
 import { DisplayTask } from "../components/displayTasks";
-import { userLoggedKey } from "~/utils/constante";
 import type { UserLogged } from "~/types";
 import { getUserFromStorage } from "~/utils/getUserLogged";
 
@@ -36,8 +35,8 @@ export const Home = () => {
       </nav>
       {
       tasksVisibility 
-      ? <DisplayTask/>
-      : <AddTask/>
+      ? <DisplayTask user={user}/>
+      : <AddTask user={user}/>
       }
     </>
   );
